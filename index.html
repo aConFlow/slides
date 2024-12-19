@@ -51,7 +51,10 @@
 
        <script>
          tinymce.init({
-           selector: 'textarea#tiny'
+           selector: 'textarea#tiny', // Select the element by its ID or class
+      plugins: 'autolink lists link image charmap preview anchor',
+      toolbar: 'undo redo | bold italic underline | link image | alignleft aligncenter alignright',
+      height: 300
          });
        </script>
       <!-- Preview -->
