@@ -14,7 +14,7 @@
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
-    <script src="/js/tinymce/tinymce.min.js"></script>
+    <script src="./js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
 <!--     <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="./js/d3.v7.min.js"></script> -->
@@ -46,51 +46,164 @@
 
     <!-- Main -->
     <main class="container">
-       <!-- Textarea to be replaced by TinyMCE -->
-       <textarea id="tiny"></textarea>
 
-       <script>
-         tinymce.init({
-           selector: 'textarea#tiny', // Select the element by its ID or class
-      plugins: 'autolink lists link image charmap preview anchor',
-      toolbar: 'undo redo | bold italic underline | link image | alignleft aligncenter alignright',
-      height: 300
-         });
-       </script>
       <!-- Preview -->
       <section id="preview">
-        <h2>Preview</h2>
-        <p>
-          Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla
-          iaculis eros a elit pharetra egestas.
-        </p>
-        <form>
-          <div class="grid">
-            <input
-              type="text"
-              name="firstname"
-              placeholder="First name"
-              aria-label="First name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email address"
-              aria-label="Email address"
-              autocomplete="email"
-              required
-            />
-            <button type="submit">Subscribe</button>
-          </div>
-          <fieldset>
-            <label for="terms">
-              <input type="checkbox" role="switch" id="terms" name="terms" />
-              I agree to the
-              <a href="#" onclick="event.preventDefault()">Privacy Policy</a>
-            </label>
-          </fieldset>
-        </form>
+
+         <article id="article">
+            <h2>Tabellarisch</h2>
+            <h3>Person</h3>
+              <div class="overflow-auto">
+                <table class="striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">name</th>
+                      <th scope="col">age</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>"Max Mustermann"</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>"Erika Musterfrau"</td>
+                      <td>28</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3>Address</h3>
+              <div class="overflow-auto">
+               <table class="striped">
+                 <thead>
+                   <tr>
+                     <th scope="col">id</th>
+                     <th scope="col">street</th>
+                     <th scope="col">city</th>
+                     <th scope="col">zipCode</th>
+                     <th scope="col">personId</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <th scope="row">1</th>
+                     <td>"Musterstraße 1"</td>
+                     <td>"Musterstadt"</td>
+                     <td>"12345"</td>
+                     <td>1</td>
+                   </tr>
+                   <tr>
+                     <th scope="row">2</th>
+                     <td>"Beispielweg 42"</td>
+                     <td>"Beispielstadt"</td>
+                     <td>"54321"</td>
+                     <td>2</td>
+                   </tr>
+                 </tbody>
+               </table>
+            <footer>
+              <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
+            </footer>
+          </article>
+      
+          <article id="article">
+            <h2>Relational</h2>
+            <pre class="mermaid">
+               erDiagram
+         Person {
+           int id
+           string name
+           int age
+         }
+         Address {
+           int id
+           string street
+           string city
+           string zipCode
+           int personId
+         }
+         Person ||--o{ Address : ""
+      </pre>
+            <footer>
+              <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
+            </footer>
+          </article>
+
+   <article id="article">
+      <h2>Hierarchisch</h2>
+      <pre class="mermaid">
+         graph TD
+         People["**People**"]
+         Person1["**Person** id='1'"]
+         Person2["**Person** id='2'"]
+         Address1["**Address**"]
+         Address2["**Address**"]
+         Name1["**Name** 'Max Mustermanne'"]
+         Name2["**Name** 'Erika Musterfrau'"]
+         Age1["**Age** '30'"]
+         Age2["**Age** '28'"]
+         Street1["**Street** 'Musterstraße '1'"]
+         City1["**City** 'Musterstadt'"]
+         ZipCode1["**ZipCode** '12345'"]
+         Street2["**Street** 'Beispielweg 42'"]
+         City2["**City** 'Beispielstadt'"]
+         ZipCode2["**ZipCode** '54321'"]
+         People --> Person1
+         People --> Person2
+         Person1 --> Name1
+         Person1 --> Age1
+         Person1 --> Address1
+         Person2 --> Name2
+         Person2 --> Age2
+         Person2 --> Address2
+         Address1 --> Street1
+         Address1 --> City1
+         Address1 --> ZipCode1
+         Address2 --> Street2
+         Address2 --> City2
+         Address2 --> ZipCode2</pre>
+      <footer>
+        <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
+      </footer>
+    </article>
+
+    <article id="article">
+      <h2>XML</h2>
+      <pre><code>
+         &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+         &lt;People&gt;
+           &lt;Person id="1"&gt;
+             &lt;Name&gt;Max Mustermann&lt;/Name&gt;
+             &lt;Age&gt;30&lt;/Age&gt;
+             &lt;Address&gt;
+               &lt;Street&gt;Musterstraße 1&lt;/Street&gt;
+               &lt;City&gt;Musterstadt&lt;/City&gt;
+               &lt;ZipCode&gt;12345&lt;/ZipCode&gt;
+             &lt;/Address&gt;
+           &lt;/Person&gt;
+           &lt;Person id="2"&gt;
+             &lt;Name&gt;Erika Musterfrau&lt;/Name&gt;
+             &lt;Age&gt;28&lt;/Age&gt;
+             &lt;Address&gt;
+               &lt;Street&gt;Beispielweg 42&lt;/Street&gt;
+               &lt;City&gt;Beispielstadt&lt;/City&gt;
+               &lt;ZipCode&gt;54321&lt;/ZipCode&gt;
+             &lt;/Address&gt;
+           &lt;/Person&gt;
+         &lt;/People&gt;
+           </code></pre>
+      <footer>
+        <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
+      </footer>
+    </article>
+
+
+
+   
       </section>
       <!-- ./ Preview -->
 
@@ -184,22 +297,18 @@
 
         <!-- Medias-->
         <figure>
-          <img
-            src="img/aleksandar-jason-a562ZEFKW8I-unsplash-2000x1000.jpg"
-            alt="Minimal landscape"
-          />
+         <pre class="mermaid">
+            graph LR
+            A --- B
+            B-->C[fa:fa-ban forbidden]
+            B-->D(fa:fa-spinner);
+        </pre>
           <figcaption>
             Image from
             <a href="https://unsplash.com/photos/a562ZEFKW8I" target="_blank">unsplash.com</a>
           </figcaption>
         </figure>
 
-        <pre class="mermaid">
-         graph LR
-         A --- B
-         B-->C[fa:fa-ban forbidden]
-         B-->D(fa:fa-spinner);
-     </pre>
       </section>
       <!-- ./ Typography-->
 
@@ -219,205 +328,23 @@
       </section>
       <!-- ./ Buttons -->
 
-      <!-- Form elements-->
-      <section id="form">
-        <form>
-          <h2>Form elements</h2>
-
-          <!-- Search -->
-          <label for="search">Search</label>
-          <input type="search" id="search" name="search" placeholder="Search" />
-
-          <!-- Text -->
-          <label for="text">Text</label>
-          <input type="text" id="text" name="text" placeholder="Text" />
-          <small>Curabitur consequat lacus at lacus porta finibus.</small>
-
-          <!-- Select -->
-          <label for="select">Select</label>
-          <select id="select" name="select" required>
-            <option value="" selected>Select…</option>
-            <option>…</option>
-          </select>
-
-          <!-- File browser -->
-          <label for="file"
-            >File browser
-            <input type="file" id="file" name="file" />
-          </label>
-
-          <!-- Range slider control -->
-          <label for="range"
-            >Range slider
-            <input type="range" min="0" max="100" value="50" id="range" name="range" />
-          </label>
-
-          <!-- States -->
-          <div class="grid">
-            <label for="valid">
-              Valid
-              <input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false" />
-            </label>
-            <label for="invalid">
-              Invalid
-              <input
-                type="text"
-                id="invalid"
-                name="invalid"
-                placeholder="Invalid"
-                aria-invalid="true"
-              />
-            </label>
-            <label for="disabled">
-              Disabled
-              <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
-            </label>
-          </div>
-
-          <div class="grid">
-            <!-- Date-->
-            <label for="date"
-              >Date
-              <input type="date" id="date" name="date" />
-            </label>
-
-            <!-- Time-->
-            <label for="time"
-              >Time
-              <input type="time" id="time" name="time" />
-            </label>
-
-            <!-- Color-->
-            <label for="color"
-              >Color
-              <input type="color" id="color" name="color" value="#0eaaaa" />
-            </label>
-          </div>
-
-          <div class="grid">
-            <!-- Checkboxes -->
-            <fieldset>
-              <legend><strong>Checkboxes</strong></legend>
-              <label for="checkbox-1">
-                <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
-                Checkbox
-              </label>
-              <label for="checkbox-2">
-                <input type="checkbox" id="checkbox-2" name="checkbox-2" />
-                Checkbox
-              </label>
-            </fieldset>
-
-            <!-- Radio buttons -->
-            <fieldset>
-              <legend><strong>Radio buttons</strong></legend>
-              <label for="radio-1">
-                <input type="radio" id="radio-1" name="radio" value="radio-1" checked />
-                Radio button
-              </label>
-              <label for="radio-2">
-                <input type="radio" id="radio-2" name="radio" value="radio-2" />
-                Radio button
-              </label>
-            </fieldset>
-
-            <!-- Switch -->
-            <fieldset>
-              <legend><strong>Switches</strong></legend>
-              <label for="switch-1">
-                <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked />
-                Switch
-              </label>
-              <label for="switch-2">
-                <input type="checkbox" id="switch-2" name="switch-2" role="switch" />
-                Switch
-              </label>
-            </fieldset>
-          </div>
-
-          <!-- Buttons -->
-          <input type="reset" value="Reset" onclick="event.preventDefault()" />
-          <input type="submit" value="Submit" onclick="event.preventDefault()" />
-        </form>
-      </section>
-      <!-- ./ Form elements-->
-
       <!-- Tables -->
       <section id="tables">
-        <h2>Tables</h2>
-        <div class="overflow-auto">
-          <table class="striped">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-                <th scope="col">Heading</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        
+       </div>
       </section>
       <!-- ./ Tables -->
-
-      <!-- Modal -->
-      <section id="modal">
-        <h2>Modal</h2>
-        <button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
-          Launch demo modal
-        </button>
-      </section>
-      <!-- ./ Modal -->
 
       <!-- Accordions -->
       <section id="accordions">
         <h2>Accordions</h2>
         <details>
           <summary>Accordion 1</summary>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam,
-            tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae
-            tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis
-            lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar
-            mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit
-            amet, congue turpis.
-          </p>
+          <p class="mermaid">
+            graph LR
+            A --- B
+            B-->C[fa:fa-ban forbidden]
+            B-->D(fa:fa-spinner);p
         </details>
         <details open>
           <summary>Accordion 2</summary>
@@ -431,20 +358,14 @@
       </section>
       <!-- ./ Accordions -->
 
-      <!-- Article-->
-      <article id="article">
-        <h2>Article</h2>
-        <p>
-          Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non
-          ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit
-          pharetra egestas. Nunc placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
-          rutrum.
-        </p>
-        <footer>
-          <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
-        </footer>
-      </article>
-      <!-- ./ Article-->
+        <!-- Textarea to be replaced by TinyMCE -->
+        <textarea id="tiny"></textarea>
+
+        <script>
+          tinymce.init({
+            selector: 'textarea#tiny'
+          });
+        </script>
 
       <!-- Group -->
       <section id="group">
@@ -457,22 +378,6 @@
         </form>
       </section>
       <!-- ./ Group -->
-
-      <!-- Progress -->
-      <section id="progress">
-        <h2>Progress bar</h2>
-        <progress id="progress-1" value="25" max="100"></progress>
-        <progress id="progress-2"></progress>
-      </section>
-      <!-- ./ Progress -->
-
-      <!-- Loading -->
-      <section id="loading">
-        <h2>Loading</h2>
-        <article aria-busy="true"></article>
-        <button aria-busy="true">Please wait…</button>
-      </section>
-      <!-- ./ Loading -->
     </main>
     <!-- ./ Main -->
 
@@ -486,38 +391,6 @@
       >
     </footer>
     <!-- ./ Footer -->
-
-    <!-- Modal example -->
-    <dialog id="modal-example">
-      <article>
-        <header>
-          <button
-            aria-label="Close"
-            rel="prev"
-            data-target="modal-example"
-            onclick="toggleModal(event)"
-          ></button>
-          <h3>Confirm your action!</h3>
-        </header>
-        <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus
-          pellentesque. Nullam finibus risus non semper euismod.
-        </p>
-        <footer>
-          <button
-            role="button"
-            class="secondary"
-            data-target="modal-example"
-            onclick="toggleModal(event)"
-          >
-            Cancel</button
-          ><button autofocus data-target="modal-example" onclick="toggleModal(event)">
-            Confirm
-          </button>
-        </footer>
-      </article>
-    </dialog>
-    <!-- ./ Modal example -->
 
     <!-- Minimal theme switcher -->
     <script src="js/minimal-theme-switcher.js"></script>
