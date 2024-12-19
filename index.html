@@ -10,11 +10,14 @@
     <meta name="description" content="A pure HTML example, without dependencies." />
 
     <!-- Pico.css -->
+    <!-- <link rel="stylesheet" href="./css/custom-green.css"/> -->
     <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<!--     <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/d3.v7.min.js"></script> -->
   </head>
 
   <body>
@@ -43,6 +46,17 @@
 
     <!-- Main -->
     <main class="container">
+       <!-- Textarea to be replaced by TinyMCE -->
+  <textarea id="editor">Welcome to TinyMCE!</textarea>
+
+  <script>
+    tinymce.init({
+      selector: '#editor', // Select the element by its ID or class
+      plugins: 'autolink lists link image charmap preview anchor',
+      toolbar: 'undo redo | bold italic underline | link image | alignleft aligncenter alignright',
+      height: 900
+    });
+  </script>
       <!-- Preview -->
       <section id="preview">
         <h2>Preview</h2>
