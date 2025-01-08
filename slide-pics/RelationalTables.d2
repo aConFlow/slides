@@ -1,0 +1,24 @@
+# Relational Tables
+
+direction: right
+
+person: {
+   shape: sql_table
+   id: int {constraint: primary_key}
+   name: string
+   age: int
+   last_updated: timestamp
+ }
+ 
+ address: {
+   shape: sql_table
+   id: int {constraint: primary_key}
+   street: string
+   city: int
+   zipCode: string
+   personId: int {constraint: foreign_key}
+   last_updated: timestamp
+ }
+ 
+ address.personId -> person.id
+ 

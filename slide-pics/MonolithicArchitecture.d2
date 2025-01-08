@@ -1,0 +1,74 @@
+# Monolithic Architecture
+
+MA: "" {
+  # grid-columns: 2
+  grid-rows: 2
+
+  Mobile: "" {
+    shape: image
+    icon: https://icons.terrastruct.com/aws%2F_General%2FMobile-client_light-bg.svg
+  }
+
+  Home: "" {
+    shape: image
+    icon: https://icons.terrastruct.com/tech%2Fbrowser-2.svg
+  }
+
+  UI: User Interface {
+    # width: 400
+    style.stroke-width: 0
+    style.fill: transparent
+    style.font-size: 20
+    style.opacity: 0.5
+  }
+
+  # style.stroke-dash: 3
+  style.border-radius: 8
+  style.opacity: 0.5
+  vertical-gap: 25
+}
+
+API: "" {
+  grid-rows: 3
+  grid-columns: 3
+
+  A: Procurement\nManagement {
+    style.border-radius: 8
+  }
+
+  B: User\nManagement {
+    style.border-radius: 8
+  }
+
+  C: Order\nManagement {
+    style.border-radius: 8
+  }
+
+  D: Inventory\nManagement {
+    style.border-radius: 8
+  }
+
+  E: Payment {
+    style.border-radius: 8
+  }
+
+  F: Logistics {
+    style.border-radius: 8
+  }
+
+  style.border-radius: 8
+  style.stroke-dash: 3
+  # style.font-size: 20
+  vertical-gap: 25
+}
+
+DB: Database {
+  shape: cylinder
+  style.multiple: true
+  style.stroke-width: 2
+  style.opacity: 0.9
+}
+
+MA -> API # { style.animated: true }
+
+API -> DB

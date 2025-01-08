@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="color-scheme" content="light dark" />
+   <title>Preview • Pico CSS</title>
+   <meta name="description" content="A pure HTML example, without dependencies." />
+
+   <!-- Pico.css -->
+   <!-- <link rel="stylesheet" href="./css/custom-green.css"/> -->
+   <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.amber.min.css">
+   <script src="./js/tinymce/tinymce.min.js"></script>
+   <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+   <!--     <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/d3.v7.min.js"></script> -->
+   <!-- Set global styles -->
+   <!--
+   <style>
+      .markmap {
+         position: relative;
+      }
+
+      .markmap>svg {
+         width: auto;
+         height: 100%;
+      }
+   </style>
+   -->
+   <!-- Load markmap -->
+   <!--<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>-->
+</head>
+
+<body>
+   <!-- Header -->
+   <header class="container">
+      <hgroup>
+         <h1>Datenhaltung in der DWG-Gruppe</h1>
+         <p>Hintergrund, Projekte und Synergien</p>
+      </hgroup>
+   </header>
+   <!-- ./ Header -->
+
+   <!-- Main -->
+   <main class="container">
+
+      <article id="dwgsysteme">
+         <details>
+            <summary>
+               <h3>DWG Systemlandschaft Übersicht (XMLneo Fokus)</h3>
+            </summary>
+            <figure>
+               <object type="image/svg+xml" data="./slide-pics/DWG_CMP_Overview_v3.svg" width="1100"
+                  height="750">
+                  Your browser does not support SVG.
+               </object>
+               <figcaption><small>Abbildung:
+                  <a href="./slide-pics/DWG_CMP_Overview_v3.svg"
+                     target="_blank">DWG_CMP_Overview_v3.svg</a></small>
+               </figcaption>
+            </figure>
+         </details>
+         <footer>
+            <small>Illustrative Darstellung der DWG Umsystemlandschaft in Bezug auf das XMLneo Content Management Projekt (Stand: 2022)</small>
+         </footer>
+      </article>
+
+      <article id="monolithic">
+         <details>
+            <summary>
+               <h3>Monolithische Software-Architektur</h3>
+            </summary>
+            <figure>
+               <div class="grid">
+                  <div><object type="image/svg+xml" data="./slide-pics/MonolithicArchitecture.svg"
+                     width="800" height="600">
+                     Your browser does not support SVG.
+                  </object></div>
+                  <div><object type="image/svg+xml" data="./slide-pics/MonolithicArchitecture.svg"
+                     width="800" height="600">
+                     Your browser does not support SVG.
+                  </object></div>
+                  <div><object type="image/svg+xml" data="./slide-pics/MonolithicArchitecture.svg"
+                     width="800" height="600">
+                     Your browser does not support SVG.
+                  </object></div>
+               </div>
+               <figcaption><small>Abbildung:
+                  <a href="./slide-pics/MonolithicArchitecture.svg" target="_blank">MonolithicArchitecture.svg</a></small>
+               </figcaption>
+            </figure>
+         </details>
+         <footer>
+            <small>Schematische Darstellung einer monolithischen Software-Architektur (Beispiele: Demsy, Censhare, Salesforce)</small>
+         </footer>
+      </article>
+
+      <article id="relational">
+         <details>
+            <summary>
+               <h3>Relationale Daten (schematisch)</h3>
+            </summary>
+            <figure>
+               <object type="image/svg+xml" data="./slide-pics/RelationalTables.svg" width="800"
+                  height="400">
+                  Your browser does not support SVG.
+               </object>
+               <figcaption><small>Abbildung:
+                  <a href="./slide-pics/RelationalTables.svg"
+                     target="_blank">RelationalTables.svg</a></small>
+               </figcaption>
+            </figure>
+         </details>
+         <footer>
+            <small>Beispiel für die schematische Darstellung relationaler Daten</small>
+         </footer>
+      </article>
+
+      <article id="tabellarisch">
+         <details>
+            <summary>
+               <h3>Relationale Daten (tabellarisch)</h3>
+            </summary>
+            <div class="grid">
+               <div>
+                  <h4>Person</h4>
+                  <table class="striped" border="outline">
+                     <thead>
+                        <tr>
+                           <th scope="col">id</th>
+                           <th scope="col">name</th>
+                           <th scope="col">age</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">1</th>
+                           <td>"Max Mustermann"</td>
+                           <td>30</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">2</th>
+                           <td>"Erika Musterfrau"</td>
+                           <td>28</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div>
+                  <h4>Address</h4>
+                  <table class="striped" border="outline">
+                     <thead>
+                        <tr>
+                           <th scope="col">id</th>
+                           <th scope="col">street</th>
+                           <th scope="col">city</th>
+                           <th scope="col">zipCode</th>
+                           <th scope="col">personId</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">1</th>
+                           <td>"Musterstraße 1"</td>
+                           <td>"Musterstadt"</td>
+                           <td>"12345"</td>
+                           <td>1</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">2</th>
+                           <td>"Beispielweg 42"</td>
+                           <td>"Beispielstadt"</td>
+                           <td>"54321"</td>
+                           <td>2</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+         </details>
+         <footer>
+            <small>Beispiel für den Inhalt relationaler Datentabellen</small>
+         </footer>
+      </article>
+
+      <article id="struktur">
+         <details>
+            <summary>
+               <h3>Strukturbasierte Daten (hierarchisch)</h3>
+            </summary>
+            <pre class="mermaid">
+         graph TD
+         People["**People**"]
+         Person1["**Person** id='1'"]
+         Person2["**Person** id='2'"]
+         Address1["**Address**"]
+         Address2["**Address**"]
+         Name1["**Name** 'Max Mustermanne'"]
+         Name2["**Name** 'Erika Musterfrau'"]
+         Age1["**Age** '30'"]
+         Age2["**Age** '28'"]
+         Street1["**Street** 'Musterstraße '1'"]
+         City1["**City** 'Musterstadt'"]
+         ZipCode1["**ZipCode** '12345'"]
+         Street2["**Street** 'Beispielweg 42'"]
+         City2["**City** 'Beispielstadt'"]
+         ZipCode2["**ZipCode** '54321'"]
+         People --> Person1
+         People --> Person2
+         Person1 --> Name1
+         Person1 --> Age1
+         Person1 --> Address1
+         Person2 --> Name2
+         Person2 --> Age2
+         Person2 --> Address2
+         Address1 --> Street1
+         Address1 --> City1
+         Address1 --> ZipCode1
+         Address2 --> Street2
+         Address2 --> City2
+         Address2 --> ZipCode2</pre>
+         </details>
+         <footer>
+            <small>Beispiel für die hierarchische Darstellung strukturbasierter Daten</small>
+         </footer>
+      </article>
+
+      <article id="xmlcode">
+         <details>
+            <summary>
+               <h3>Strukturbasierte Daten (XML-Code)</h3>
+            </summary>
+            <pre><code>
+                  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                  &lt;People&gt;
+                    &lt;Person id="1"&gt;
+                      &lt;Name&gt;Max Mustermann&lt;/Name&gt;
+                      &lt;Age&gt;30&lt;/Age&gt;
+                      &lt;Address&gt;
+                        &lt;Street&gt;Musterstraße 1&lt;/Street&gt;
+                        &lt;City&gt;Musterstadt&lt;/City&gt;
+                        &lt;ZipCode&gt;12345&lt;/ZipCode&gt;
+                      &lt;/Address&gt;
+                    &lt;/Person&gt;
+                    &lt;Person id="2"&gt;
+                      &lt;Name&gt;Erika Musterfrau&lt;/Name&gt;
+                      &lt;Age&gt;28&lt;/Age&gt;
+                      &lt;Address&gt;
+                        &lt;Street&gt;Beispielweg 42&lt;/Street&gt;
+                        &lt;City&gt;Beispielstadt&lt;/City&gt;
+                        &lt;ZipCode&gt;54321&lt;/ZipCode&gt;
+                      &lt;/Address&gt;
+                    &lt;/Person&gt;
+                  &lt;/People&gt;</code></pre>
+         </details>
+         <footer>
+            <small>Beispiel für die Quellcode-Darstellung strukturbasierter Daten</small>
+         </footer>
+      </article>
+
+      <article id="ditalt">
+         <details>
+            <summary>
+               <h3>Dokumentbasierte Daten (Dita LT XML)</h3>
+            </summary>
+            <pre class="mermaid">
+         graph LR
+         LC["**learningContent**"]
+         LC --> Title["**title** 'Aber wie stärkt man seine eigene Motivation?'"]
+         LC --> Body["**learningContentbody**"]
+       
+         Body --> Section["**section**"]
+         Section --> P1["**p** 'Um uns selbst zu motivieren, gibt es keinen Zauberstab...'"]
+         Section --> P2["**p** 'Es hilft, sich darüber Gedanken zu machen,'"]
+         Section --> List1["**ul**"]
+       
+         List1 --> Item1["**li** 'was uns motiviert,'"]
+         List1 --> Item2["**li** 'wo es im Moment mit der Motivation hapert...'"]
+         List1 --> Item3["**li** 'was wir jetzt für eine höhere Motivation tun können.'"]
+       
+         Section --> P3["**p** 'Dazu ein paar Tipps aus der Praxis:'"]
+         Section --> List2["**ul**"]
+       
+         List2 --> Tip1["**li** 'Lenken wir unser Augenmerk auf unsere bisherigen Erfolge...'"]
+         List2 --> Tip2["**li** 'Machen wir uns bewusst, dass ein Nein nicht uns persönlich...'"]
+         List2 --> Tip3["**li** 'Belohnen wir uns für Erreichtes...'"]
+         List2 --> Tip4["**li** 'Halten wir uns unsere Ziele vor Augen...'"]
+         List2 --> Tip5["**li** 'Rufen wir zufriedene Kundinnen an...'"]
+       
+         Section --> Table1["**table**"]
+         Table1 --> Entry1["**entry** 'Unsere Motivation beginnt bei uns im Kopf...'"]
+       
+         Section --> P4["**p** 'Aufgabe gesetzt in data2type-Aufgaben-Vorlage'"]
+       
+         Section --> OpenQ1["**lcOpenQuestion2**"]
+       
+         Section --> P5["**p** 'Aufgabe gesetzt in DWG-Aufgaben-Vorlage'"]
+       
+         Section --> Table2["**table**"]
+         Table2 --> Title2["**div** 'Übung 1.17:'"]
+         Table2 --> Q1["**p** 'Überlegen Sie: Warum beginnt Motivation im Kopf?'"]
+       
+         Section --> P6["**p** 'Eine gute Motivation hat viel mit der eigenen Einstellung zu tun...'"]
+       
+         Section --> P7["**p** 'Wie motiviert sind wir (noch) für den Umgang mit Kundinnen?'"]
+       
+         Section --> Table3["**table**"]
+         Table3 --> Title3["**div** 'Übung 1.18:'"]
+         Table3 --> Q2["**p** 'Bitte beantworten Sie die folgenden Fragen:'"]
+         Table3 --> SubTable["**table**"]
+         
+         SubTable --> Question1["**row** 'Meine Arbeit als Beraterin macht mir nach wie vor Spaß.'"]
+         SubTable --> Question2["**row** 'Trotz der Routine erlebe ich diese Aufgabe als Herausforderung.'"]
+         SubTable --> Question3["**row** 'Falls eine Kundin ein Problem hat, tue ich alles Mögliche...'"]
+       
+         Section --> P8["**p** 'Je häufiger wir stimmt angekreuzt haben...'"]
+       
+         Section --> OpenQ2["**lcOpenQuestion2**"]
+         Section --> OpenQ3["**lcOpenQuestion2**"]
+       
+         Section --> P9["**p** 'Aufgabe gesetzt in DWG-Aufgaben-Vorlage'"]
+       
+         Section --> Table4["**table**"]
+         Table4 --> Title4["**div** 'Übung 1.20:'"]
+         Table4 --> Q3["**p** 'Bitte notieren Sie:'"]
+         Table4 --> OL["**ol**"]
+         
+         OL --> ListItem1["**li** 'Welche der Möglichkeiten, die Motivation zu verbessern...'"]
+         OL --> ListItem2["**li** 'Was werden Sie konkret tun, um Ihre Motivation...'"]
+
+</pre>
+         </details>
+         <footer>
+            <small>Beispiel für die hierarchische Darstellung Dita LT dokumentbasierter Daten</small>
+         </footer>
+      </article>
+
+      <article id="options">
+         <details>
+            <summary>
+               <h3>Microkernel, Microservices, CQRS</h3>
+            </summary>
+            <figure>
+               <div class="grid">
+                  <div>
+                     <figure>
+                        <img src="./slide-pics/MicrokernelArchitecture.PNG" alt="Microkernel Architecture" width="400"/>
+                        <figcaption><small>Abbildung:
+                           <a href="./slide-pics/MicrokernelArchitecture.PNG" target="_blank">MicrokernelArchitecture.PNG</a></small>
+                        </figcaption>
+                     </figure>
+                  </div>
+                  <div><figure>
+                        <object type="image/svg+xml" data="./slide-pics/MicroservicesArchitecture.svg"
+                           width="400" height="400">
+                           Your browser does not support SVG.
+                        </object>
+                     <figcaption><small>Abbildung:
+                        <a href="./slide-pics/MicroservicesArchitecture.svg" target="_blank">MicroservicesArchitecture.svg</a></small>
+                     </figcaption>
+                  </figure>
+                  </div>
+                  <div>
+                     <figure>
+                        <img src="./slide-pics/CQRS.PNG" alt="CQRS" width="400"/>
+                        <figcaption><small>Abbildung:
+                           <a href="./slide-pics/CQRS.PNG" target="_blank">CQRS.PNG</a></small>
+                        </figcaption>
+                     </figure>
+                  </div>
+               </div>
+         </details>
+         <footer>
+            <small>Schematische Darstellungen von Software-Architektur-Patterns basierend auf Microkernel, Microservices, CQRS</small>
+         </footer>
+      </article>
+
+      <article id="contentflow">
+         <details>
+            <summary>
+               <h3>Backup Stack</h3>
+            </summary>
+            <ul>
+               <li><figure>
+                  <figcaption><small>DWG CMP GrobKonzept GIT:
+                     <a href="./slide-pics/DWG_CMP_GrobKonzept_GIT.svg" target="_blank">DWG_CMP_GrobKonzept_GIT.svg</a></small>
+                  </figcaption>
+               </figure></li>
+               <li><figure>
+                  <figcaption><small>DITA LT Framework Formate:
+                     <a href="./slide-pics/DITA_LT_Framework_Formate.svg" target="_blank">DITA_LT_Framework_Formate.svg</a></small>
+                  </figcaption>
+               </figure></li>
+               <li><figure>
+                  <figcaption><small>DWG CMP Parallelbetrieb:
+                     <a href="./slide-pics/DWG_CMP_Parallelbetrieb.svg" target="_blank">DWG_CMP_Parallelbetrieb.svg</a></small>
+                  </figcaption>
+               </figure></li>
+               <li><figure>
+                  <figcaption><small>CMP Requirements Vs Strategie Vs Completition CMP:
+                     <a href="./slide-pics/SGD_CMP_RequirementsVsStrategieVsCompletition_CMP.svg" target="_blank">SGD_CMP_RequirementsVsStrategieVsCompletition_CMP.svg</a></small>
+                  </figcaption>
+               </figure></li>
+               <li><figure>
+                  <figcaption><small>CMP Requirements Vs Strategie Vs Completition OT:
+                     <a href="./slide-pics/SGD_CMP_RequirementsVsStrategieVsCompletition_OT.svg" target="_blank">SGD_CMP_RequirementsVsStrategieVsCompletition_OT.svg</a></small>
+                  </figcaption>
+               </figure></li>
+            </ul>
+         </details>
+         <footer><small>Backup Stack für das XMLneo/contentFlow Projekt (Stand: 2023)</small></footer>
+         </footer>
+      </article>
+
+<!--
+      <article id="article">
+         <details>
+            <summary>
+               <h2>Markmap</h2>
+            </summary>
+
+            <div class="markmap">
+               <script type="text/template">
+# Einsendeaufgaben
+Bei den Einsendeaufgaben handelt es sich um Lernerfolgskontrollen, die Sie im Verlauf Ihrer Online-Weiterbildung begleiten werden. Die Einsendeaufgaben, kurz ESA, beziehen sich immer auf die Lernmaterialien, die Sie von uns erhalten. Sie werden von einer Fernlehrerin oder einem Fernlehrer kontrolliert, die/der Expert/in auf dem jeweiligen Fachgebiet ist.  
+
+Das regelmäßige Einreichen Ihrer Einsendeaufgaben spielt eine zentrale Rolle in Ihrer Online-Weiterbildung - und wir unterstützen Sie dabei. Ihre Fernlehrer/innen geben Ihnen im Verlauf Ihrer Weiterbildung kontinuierlich Feedback, indem sie Ihre Aufgaben sorgfältig prüfen und bewerten. So erkennen wir frühzeitig Verständnislücken und klären diese rechtzeitig.
+Mit konkreten Tipps helfen wir Ihnen, Ihren Lernprozess bestmöglich zu gestalten. Sie behalten jederzeit den Überblick über Ihre Fortschritte und gewinnen so zusätzlich Sicherheit auf dem Weg zu Ihrem erfolgreichen Abschluss.
+
+**Unser Tipp:** Nutzen Sie am besten die vorbereitete digitale Vorlage (Word-Dokument), um Ihre Aufgaben direkt über den sgd-OnlineCampus hochzuladen. 
+
+## So finden Sie die digitale Vorlage der Einsendeaufgabe
+
+Die Einsendeaufgabe zu jedem Studienheft finden Sie als Wordvorlage im [sgd-OnlineCampus](https://www.sgd-campus.de/) in Ihrem Studienplan:
+1. Öffnen Sie unter "Studienmonat" die Datei mit dem entsprechenden Heftkürzel (z. B. LERN15B). 
+2. Unter der Option "Download Einsendeaufgabe" können Sie die digitale Einsendeaufgabe herunterladen. 
+3. Speichern Sie die Datei lokal auf ihrem PC.
+
+## Bearbeiten und Einsenden der Einsendeaufgabe
+
+**Persönliche Angaben** 
+Bevor Sie mit der inhaltlichen Beantwortung der Aufgaben beginnen, ergänzen Sie bitte immer am Seitenanfang der Einsendeaufgabe Ihre Vertragsnummer, Ihren Namen und Ihre Anschrift. Bitte fügen Sie hier auch das Kürzel des Studienhefts ein, zu dem die Einsendeaufgabe gehört.
+Nur so kann Ihr/e Fernlehrer/in die Einsendeaufgabe eindeutig zuordnen. 
+
+**Beantworten der Aufgaben**
+- Beginnen Sie mit der Einsendeaufgabe am besten erst, wenn Sie die Inhalte des Studienhefts vollständig durchgearbeitet haben.
+- Fügen Sie Ihre Antworten direkt unter die jeweilige Aufgabenstellung ein und denken Sie daran, Ihre Antworten regelmäßig abzuspeichern. 
+- Im Unterschied zu den Übungsaufgaben im Text und zu den Wiederholungsaufgaben am Kapitelende, können Sie die Antworten zur Einsendeaufgabe nicht eigenständig kontrollieren. Ihre Einsendeaufgabe wird stattdessen von einer Fernlehrerin oder einem Fernlehrer begutachtet und benotet.
+- Wie es der Name schon sagt: Wenn Sie alle *Aufgaben* einer ESA bearbeitet haben, können Sie diese *einsenden*. 
+
+**Einsenden**
+Bitte laden Sie Ihre eigenständig bearbeitete Einsendeaufgabe im sgd-OnlineCampus hoch.
+
+Wenn Sie uns Ihre Einsendeaufgabe aus technischen Gründen nicht über die Online-Plattform schicken können, nutzen Sie einfach den Postweg.
+
+**Handschriftliches Beantworten der Aufgaben**
+In manchen Lehrgängen werden die Einsendeaufgaben handschriftlich bearbeitet. Wenn dies auf Ihren Lehrgang zutrifft, weisen wir Sie hierauf rechtzeitig hin. In diesem Fall gehen Sie bei der Bearbeitung der ESA bitte folgendermaßen vor:
+- Trennen Sie die Einsendeaufgaben aus dem Studienheft heraus oder fertigen Sie eine eine Kopie davon, wenn Sie das Studienheft unversehrt lassen möchten. Alternativ drucken Sie bitte die Online-Vorlage aus.
+- Schreiben Sie Ihre Lösung per Hand auf liniertes oder kariertes Papier im DIN A4-Format. Achten Sie bitte auf eine leserliche Schrift und einen ausreichend breiten Rand (etwa 5 cm).
+- Schreiben Sie mit Kugelschreiber oder Tinte. Bitte schreiben Sie nicht mit Bleistift.
+- Wenn Sie fertig sind, schicken Sie uns bitte das Aufgabenblatt mit Korrekturkopf zusammen mit Ihren Lösungen auf einem der Kontaktwege unter "Einsenden".
+
+Tipp: Machen Sie sich vor Einsenden Ihrer Antworten eine Kopie von Ihren Lösungen, die Sie bei Ihren Unterlagen ablegen.
+
+## Tipps zur Beantwortung der Einsendeaufgaben
+Lesen Sie sich die Aufgabenstellung immer genau durch. Das verwendete Verb gibt Ihnen bisweilen einen guten Anhaltspunkt, in welchem Umfang die Frage zu beantworten ist.
+
+**Nennen, Aufzählen, Benennen** 
+Hier nennen Sie wirklich nur stichpunktartig. Sicherheitshalber können Sie einen kurzen Halbsatz oder Hinweis auf die Bedeutung anführen (in Klammern). 
+
+**Erläutern, Kennzeichnen, Skizzieren, Verdeutlichen, Beschreiben, Erklären** 
+Erläutern Sie die von Ihnen genannten Aspekte. Schreiben Sie mindestens 2-3 vollständige Sätze zur Verdeutlichung zu jedem genannten Punkt. 
+
+**Bewerten** 
+Eine Aufzählung mit umfangreicherer Erläuterung als bei "Nennen, Aufzählen oder Benennen". Bewerten oder schätzen Sie den Sachverhalt ein und schreiben Sie in ganzen Sätzen. 
+
+**Weitere Beispiele**
+*„Worin liegen die Vor- und Nachteile?“* 
+Hier wird eine explizite Benennung der Vor- und Nachteile erwartet. Diese kann man eventuell dem Lernstoff entnehmen oder - wenn dort nicht aufgeführt - aus eigenen Überlegungen entwickeln. Schreiben Sie in ganzen Sätzen. 
+
+*„Analysieren Sie“, „Untersuchen Sie“, „Entscheiden Sie“* 
+Hier ist eine genauere Verdeutlichung des Sachverhalts und eine umfangreichere Begründung gefordert. Gern dürfen Sie auch eigene Gedanken formulieren. Schreiben Sie in ganzen Sätzen. 
+
+*„Nehmen Sie kritisch Stellung“* 
+Hier wird eine Benennung der Vor- und Nachteile oder des Für und Widers erwartet. Daraufhin sollte kurz eine eigene Stellungnahme erfolgen. Schreiben Sie in ganzen Sätzen. 
+
+*„Worin unterscheiden sich“, „Grenzen Sie xy von yz ab“* 
+Hier sind der oder die Unterschiede dieser Aspekte bzw. Argumente zu verdeutlichen. Sie sind aus dem Lerntoff oder aus eigenen Überlegungen abzuleiten. Schreiben Sie in ganzen Sätzen.
+
+*„Berechnen Sie xy", „Erläutern Sie das Ergebnis“*
+Hier muss eine genaue Berechnung mit klar nachvollziehbaren Rechenschritten erfolgen. Das Ergebnis ist in einem Extrasatz aufzuführen und - je nach Fragetext - auf seine Bedeutung für die Fragestellung zu erläutern und auch zu bewerten. 
+
+*„Überlegen Sie, welche Maßnahmen/Möglichkeiten zur Verfügung stehen“, „Welche Punkte müsste/könnte man anführen“* 
+Zählen Sie hier mindestens zwei (gerne mehr) eigens entwickelte oder aus dem Lernstoff bzw. eigener Recherche übernommene Maßnahmen, Möglichkeiten oder Punkte auf. Erläutern Sie die einzelnen genannten Aspekte mit jeweils mindestens zwei bis drei Sätzen. 
+## Einsendeaufgaben lösen - wie vorgehen?
+Den besten Erfolg erzielen Sie, wenn Sie die Einsendeaufgaben in mehreren Schritten bearbeiten:
+- Lesen Sie zunächst die komplette Aufgabenstellung der ESA durch. 
+- Nutzen Sie ggf. Ihr Methodenheft, um die Aufgabenstellung richtig zu verstehen.
+- Lesen Sie danach nochmal die für die Lösung erforderlichen Stellen im Studienheft.
+- Überlegen Sie in Ruhe, wie der Lösungsweg aussehen soll.
+- Verfassen Sie dann Ihre Lösung.
+- Haben Sie alle Aufgaben gelöst, lesen Sie sich alles noch einmal in Ruhe durch. Machen Sie - wenn nötig - Verbesserungen.
+
+Seien Sie unbesorgt, wenn das Beantworten der Einsendeaufgabe einmal länger dauert als Sie es geplant haben. Schließlich gilt auch hier: Übung macht den Meister - oder die Meisterin. Schon bei der nächsten Einsendeaufgabe wird Ihnen das Beantworten sicherlich schneller "von der Hand gehen". 
+## Einsendeaufgaben - Ihre eigenständige Leistung
+Das Abschreiben von Textpassagen aus dem Studienheft oder von einer anderen Quelle ist kein geeignetes Vorgehen zum Nachweis Ihres Lernfortschritts. Abgesehen von urheberrechtlichen Aspekten ist wichtig, dass Sie mit der ESA eine persönliche Eigenleistung einreichen. Denn nur so erhalten Sie eine Rückmeldung zu Ihrer persönlichen Leistung.
+- Sie bereiten sich am besten vor, indem Sie alle Aufgaben mit Ihren eigenen Worten beantworten. 
+- Ihren individuellen Lernfortschritt in der Online-Weiterbildung können wir nur dann beurteilen, wenn Sie deutlich machen, welche Inhalte und Ideen Ihr Anteil sind und was Sie ggf. aus anderen Quellen einbringen. 
+- Wenn Sie bei der Beantwortung einer Einsendeaufgabe andere Texte mit einfließen lassen möchten, ist dies im Prinzip zulässig. Sie müssen aber unbedingt die Verwendung fremder Gedanken kenntlich machen - egal ob es sich um Textausschnitte aus dem Internet, aus Zeitschriften oder Büchern handelt.
+
+**Denken Sie unbedingt daran**: Sie müssen die Verwendung von Informationen oder Gedanken oder Ideen Anderer kenntlich machen - egal, ob es sich um das Studienheft handelt, um Quellen im Internet oder das geistige Eigentum Dritter aus Zeitschriften, Büchern oder text-/bildgenerativer Künstlicher Intelligenz. 
+
+Ausführliche Tipps zum richtigen Zitieren und zum Umgang mit KI finden Sie im Online-Studienzentrum im Bereich Information/Downloadbereich.
+
+Und denken Sie bitte auch daran: Wir unterstützen Sie jederzeit gerne bei der Bearbeitung von eigenständigen Lösungen für Ihre Einsendeaufgaben! Sie werden schon bald feststellen, dass Sie das in jedem Fall weiterbringt.
+
+## Korrekturzeit 
+Ihre Lösung wird an die jeweils zuständigen Fernlehrer/innen weitergeleitet. Ihr/e Fernlehrer/in wird Ihre Einsendeaufgabe korrigieren, benoten und kommentieren.
+Die korrigierte Einsendeaufgabe erhalten Sie spätestens zwei Wochen, nachdem sie bei uns eingetroffen ist, zurück. In der Regel erhalten Sie Einsendeaufgaben, die Sie über den sgd-OnlineCampus eingesendet haben, schneller zurück, weil die Zeit für den Postweg entfällt.
+## Benotung 
+((Notenschlüssel meistens abhängig vom Lehrgangsziel))
+
+## Regeln für das Verwenden von anderen Quellen
+**Wie können Sie fremde Quellen in den eigenen Text einbringen, d. h. zitieren?**
+Hier gibt es zwei Möglichkeiten:
+1. Wenn Sie ein Zitat wörtlich übernehmen, markieren Sie dies durch Anführungszeichen. Auslassungen aus dem Zitat zeigen Sie durch drei Punkte in eckigen Klammern. Nach dem Zitat geben Sie die Quelle in Klammern an:
+   „Unter der Netiquette […] versteht man das gute oder angemessene und achtende (respektvolle) Benehmen in der technischen (elektronischen) Kommunikation. Der Begriff beschrieb ursprünglich Verhaltensempfehlungen im Usenet, er wird aber mittlerweile für alle Bereiche in Datennetzen verwendet.“
+   (https://de.wikipedia.org/wiki/Netiquette [Stand: 16.12.2024])
+
+2. Wenn Sie einen Gedanken nur aufgreifen und umschreiben, aber nicht wörtlich zitieren, machen Sie dies durch ein paar einführende Worte deutlich. Auch hier geben Sie die Quelle in Klammern an:
+   Laut Schulz von Thun haben fast alle Nachrichten die Funktion, auf den Empfänger Einfluss zu nehmen (Schulz von Thun, Friedemann. (2003). Miteinander reden, Band 1. Reinbek: Rowohlt Verlag, S. 29).
+Oder:
+   Schulz von Thun behauptet, dass fast alle Nachrichten die Funktion haben, auf den Empfänger Einfluss zu nehmen (Schulz von Thun, Friedemann. (2003). Miteinander reden, Band 1. Reinbek: Rowohlt Verlag, S. 29).
+Wenn Sie dieselbe Quelle noch einmal verwenden, müssen Sie natürlich nicht den gesamten Titel noch einmal angeben. Schreiben Sie dann einfach: (Schulz von Thun, 2003, S. 37).
+
+**Wie gestalten Sie eine Literaturangabe?**
+Die Literaturangabe muss so gestaltet sein, dass Ihr/e Fernlehrer/in die Quelle ausfindig machen und das Zitat nachvollziehen kann. Dazu sind notwendig:
+a) bei Büchern:
+- Autor, Erscheinungsjahr, Titel, Verlagsort, Verlag, Seite
+   Beispiel:
+   Birkenbihl, Vera F. (2013). Kommunikationstraining. Zwischenmenschliche Beziehungen erfolgreich gestalten. Landsberg am Lech: Moderne Verlagsgesellschaft, S. 35.
+b) bei Aufsätzen in Büchern:
+- Autor, Erscheinungsjahr, Titel des Aufsatzes, Herausgeber, Buchtitel, Verlagsort, Verlag, Seiten des Aufsatzes, Seite des Zitats
+   Beispiel:
+   Weinkopf, Claudia. (2007). Qualifizierung in der vermittlungsorientierten Arbeitnehmerüberlassung. In: Münchhausen, Gesa (Hrsg.): Kompetenzentwicklung in der Zeitarbeit - Potenziale und Grenzen. Bonn: Bundesinstitut für Berufsbildung, S. 45-54, hier S. 47.
+c) bei Artikeln in Zeitschriften:
+- Autor, Erscheinungsjahr, Titel des Artikels, Zeitschriftentitel, Heftnummer, Seiten des Artikels, Seite des Zitats
+   Beispiel:
+   Hardinghaus, Barbara; Neufeld, Dialika. (2015). Du bist Mozart! In: Der Spiegel, 41, S. 40-46, hier S. 42.
+d) bei Texten aus dem Internet:
+   Autor (wenn möglich), Jahr der Veröffentlichung, Titel, URL, Abrufdatum
+   Beispiel:
+   Smid, Menno. (2018). „Die meisten wollen lernen“. https://www.zeit.de/2018/50/menno-smid-infas-wuensche-arbeitnehmer-digitalisierung (Stand: 16.12.2024).
+      </script>
+            </div>
+         </details>
+         <footer>
+         </footer>
+      </article>
+   -->
+
+   </main>
+   <!-- ./ Main -->
+
+   <!-- Footer -->
+   <footer class="container">
+      <small>Built with <a href="https://picocss.com">Pico</a> • <a
+            href="https://d2-language.com">D2</a> • <a href="http://mermaid.js.org">Mermaid</a><!-- • <a
+            href="https://markmap.js.org">Markmap</a>-->
+      </small>
+   </footer>
+   <!-- ./ Footer -->
+</body>
+
+</html>
